@@ -14,7 +14,14 @@
 		0B54336E15FF4DEF002CE137 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54336D15FF4DEF002CE137 /* main.m */; };
 		0B54337215FF4DEF002CE137 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54337115FF4DEF002CE137 /* AppDelegate.m */; };
 		0B54337515FF4DEF002CE137 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B54337315FF4DEF002CE137 /* MainStoryboard.storyboard */; };
-		0B54337815FF4DEF002CE137 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54337715FF4DEF002CE137 /* ViewController.m */; };
+		0B54338315FF54B3002CE137 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54338215FF54B3002CE137 /* LoginViewController.m */; };
+		0B54338915FF65DA002CE137 /* LoginCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54338815FF65DA002CE137 /* LoginCheck.m */; };
+		0B54338C15FF6DBE002CE137 /* NewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54338B15FF6DBE002CE137 /* NewItemViewController.m */; };
+		0B54338F15FF6DD9002CE137 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54338E15FF6DD9002CE137 /* ChangePasswordViewController.m */; };
+		0B54339215FF6DF4002CE137 /* ViewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54339115FF6DF4002CE137 /* ViewItemViewController.m */; };
+		0B54339515FF6E3E002CE137 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54339415FF6E3E002CE137 /* MainViewController.m */; };
+		0B54339815FF9377002CE137 /* NSString_Md5Support.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54339715FF9377002CE137 /* NSString_Md5Support.m */; };
+		0B54339B15FF9722002CE137 /* Logoff.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54339A15FF9722002CE137 /* Logoff.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +36,22 @@
 		0B54337015FF4DEF002CE137 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0B54337115FF4DEF002CE137 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0B54337415FF4DEF002CE137 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		0B54337615FF4DEF002CE137 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0B54337715FF4DEF002CE137 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0B54338115FF54B3002CE137 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
+		0B54338215FF54B3002CE137 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
+		0B54338715FF65DA002CE137 /* LoginCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginCheck.h; sourceTree = "<group>"; };
+		0B54338815FF65DA002CE137 /* LoginCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginCheck.m; sourceTree = "<group>"; };
+		0B54338A15FF6DBE002CE137 /* NewItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewItemViewController.h; sourceTree = "<group>"; };
+		0B54338B15FF6DBE002CE137 /* NewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewItemViewController.m; sourceTree = "<group>"; };
+		0B54338D15FF6DD9002CE137 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
+		0B54338E15FF6DD9002CE137 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
+		0B54339015FF6DF4002CE137 /* ViewItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewItemViewController.h; sourceTree = "<group>"; };
+		0B54339115FF6DF4002CE137 /* ViewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewItemViewController.m; sourceTree = "<group>"; };
+		0B54339315FF6E3E002CE137 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		0B54339415FF6E3E002CE137 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		0B54339615FF932B002CE137 /* NSString_Md5Support.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSString_Md5Support.h; sourceTree = "<group>"; };
+		0B54339715FF9377002CE137 /* NSString_Md5Support.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_Md5Support.m; sourceTree = "<group>"; };
+		0B54339915FF9722002CE137 /* Logoff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logoff.h; sourceTree = "<group>"; };
+		0B54339A15FF9722002CE137 /* Logoff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logoff.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +98,26 @@
 		0B54336715FF4DEF002CE137 /* gglocker */ = {
 			isa = PBXGroup;
 			children = (
+				0B54338115FF54B3002CE137 /* LoginViewController.h */,
+				0B54338215FF54B3002CE137 /* LoginViewController.m */,
 				0B54337015FF4DEF002CE137 /* AppDelegate.h */,
 				0B54337115FF4DEF002CE137 /* AppDelegate.m */,
 				0B54337315FF4DEF002CE137 /* MainStoryboard.storyboard */,
-				0B54337615FF4DEF002CE137 /* ViewController.h */,
-				0B54337715FF4DEF002CE137 /* ViewController.m */,
 				0B54336815FF4DEF002CE137 /* Supporting Files */,
+				0B54338715FF65DA002CE137 /* LoginCheck.h */,
+				0B54338815FF65DA002CE137 /* LoginCheck.m */,
+				0B54338A15FF6DBE002CE137 /* NewItemViewController.h */,
+				0B54338B15FF6DBE002CE137 /* NewItemViewController.m */,
+				0B54338D15FF6DD9002CE137 /* ChangePasswordViewController.h */,
+				0B54338E15FF6DD9002CE137 /* ChangePasswordViewController.m */,
+				0B54339015FF6DF4002CE137 /* ViewItemViewController.h */,
+				0B54339115FF6DF4002CE137 /* ViewItemViewController.m */,
+				0B54339315FF6E3E002CE137 /* MainViewController.h */,
+				0B54339415FF6E3E002CE137 /* MainViewController.m */,
+				0B54339615FF932B002CE137 /* NSString_Md5Support.h */,
+				0B54339715FF9377002CE137 /* NSString_Md5Support.m */,
+				0B54339915FF9722002CE137 /* Logoff.h */,
+				0B54339A15FF9722002CE137 /* Logoff.m */,
 			);
 			path = gglocker;
 			sourceTree = "<group>";
@@ -163,7 +198,14 @@
 			files = (
 				0B54336E15FF4DEF002CE137 /* main.m in Sources */,
 				0B54337215FF4DEF002CE137 /* AppDelegate.m in Sources */,
-				0B54337815FF4DEF002CE137 /* ViewController.m in Sources */,
+				0B54338315FF54B3002CE137 /* LoginViewController.m in Sources */,
+				0B54338915FF65DA002CE137 /* LoginCheck.m in Sources */,
+				0B54338C15FF6DBE002CE137 /* NewItemViewController.m in Sources */,
+				0B54338F15FF6DD9002CE137 /* ChangePasswordViewController.m in Sources */,
+				0B54339215FF6DF4002CE137 /* ViewItemViewController.m in Sources */,
+				0B54339515FF6E3E002CE137 /* MainViewController.m in Sources */,
+				0B54339815FF9377002CE137 /* NSString_Md5Support.m in Sources */,
+				0B54339B15FF9722002CE137 /* Logoff.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainViewController.h
 //  gglocker
 //
 //  Created by gabry on 9/11/12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MainViewController : UITableViewController
 
 @end
