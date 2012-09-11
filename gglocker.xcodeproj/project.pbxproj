@@ -1,0 +1,286 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B54336215FF4DEF002CE137 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B54336115FF4DEF002CE137 /* UIKit.framework */; };
+		0B54336415FF4DEF002CE137 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B54336315FF4DEF002CE137 /* Foundation.framework */; };
+		0B54336615FF4DEF002CE137 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B54336515FF4DEF002CE137 /* CoreGraphics.framework */; };
+		0B54336C15FF4DEF002CE137 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B54336A15FF4DEF002CE137 /* InfoPlist.strings */; };
+		0B54336E15FF4DEF002CE137 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54336D15FF4DEF002CE137 /* main.m */; };
+		0B54337215FF4DEF002CE137 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54337115FF4DEF002CE137 /* AppDelegate.m */; };
+		0B54337515FF4DEF002CE137 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B54337315FF4DEF002CE137 /* MainStoryboard.storyboard */; };
+		0B54337815FF4DEF002CE137 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54337715FF4DEF002CE137 /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0B54335D15FF4DEE002CE137 /* gglocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gglocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B54336115FF4DEF002CE137 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0B54336315FF4DEF002CE137 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0B54336515FF4DEF002CE137 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0B54336915FF4DEF002CE137 /* gglocker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "gglocker-Info.plist"; sourceTree = "<group>"; };
+		0B54336B15FF4DEF002CE137 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0B54336D15FF4DEF002CE137 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0B54336F15FF4DEF002CE137 /* gglocker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gglocker-Prefix.pch"; sourceTree = "<group>"; };
+		0B54337015FF4DEF002CE137 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0B54337115FF4DEF002CE137 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0B54337415FF4DEF002CE137 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		0B54337615FF4DEF002CE137 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0B54337715FF4DEF002CE137 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0B54335A15FF4DEE002CE137 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B54336215FF4DEF002CE137 /* UIKit.framework in Frameworks */,
+				0B54336415FF4DEF002CE137 /* Foundation.framework in Frameworks */,
+				0B54336615FF4DEF002CE137 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B54335215FF4DEE002CE137 = {
+			isa = PBXGroup;
+			children = (
+				0B54336715FF4DEF002CE137 /* gglocker */,
+				0B54336015FF4DEE002CE137 /* Frameworks */,
+				0B54335E15FF4DEE002CE137 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0B54335E15FF4DEE002CE137 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0B54335D15FF4DEE002CE137 /* gglocker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0B54336015FF4DEE002CE137 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B54336115FF4DEF002CE137 /* UIKit.framework */,
+				0B54336315FF4DEF002CE137 /* Foundation.framework */,
+				0B54336515FF4DEF002CE137 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0B54336715FF4DEF002CE137 /* gglocker */ = {
+			isa = PBXGroup;
+			children = (
+				0B54337015FF4DEF002CE137 /* AppDelegate.h */,
+				0B54337115FF4DEF002CE137 /* AppDelegate.m */,
+				0B54337315FF4DEF002CE137 /* MainStoryboard.storyboard */,
+				0B54337615FF4DEF002CE137 /* ViewController.h */,
+				0B54337715FF4DEF002CE137 /* ViewController.m */,
+				0B54336815FF4DEF002CE137 /* Supporting Files */,
+			);
+			path = gglocker;
+			sourceTree = "<group>";
+		};
+		0B54336815FF4DEF002CE137 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0B54336915FF4DEF002CE137 /* gglocker-Info.plist */,
+				0B54336A15FF4DEF002CE137 /* InfoPlist.strings */,
+				0B54336D15FF4DEF002CE137 /* main.m */,
+				0B54336F15FF4DEF002CE137 /* gglocker-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0B54335C15FF4DEE002CE137 /* gglocker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B54337B15FF4DEF002CE137 /* Build configuration list for PBXNativeTarget "gglocker" */;
+			buildPhases = (
+				0B54335915FF4DEE002CE137 /* Sources */,
+				0B54335A15FF4DEE002CE137 /* Frameworks */,
+				0B54335B15FF4DEE002CE137 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gglocker;
+			productName = gglocker;
+			productReference = 0B54335D15FF4DEE002CE137 /* gglocker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0B54335415FF4DEE002CE137 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Gabriele Greco";
+			};
+			buildConfigurationList = 0B54335715FF4DEE002CE137 /* Build configuration list for PBXProject "gglocker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0B54335215FF4DEE002CE137;
+			productRefGroup = 0B54335E15FF4DEE002CE137 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0B54335C15FF4DEE002CE137 /* gglocker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0B54335B15FF4DEE002CE137 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B54336C15FF4DEF002CE137 /* InfoPlist.strings in Resources */,
+				0B54337515FF4DEF002CE137 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0B54335915FF4DEE002CE137 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B54336E15FF4DEF002CE137 /* main.m in Sources */,
+				0B54337215FF4DEF002CE137 /* AppDelegate.m in Sources */,
+				0B54337815FF4DEF002CE137 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0B54336A15FF4DEF002CE137 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B54336B15FF4DEF002CE137 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0B54337315FF4DEF002CE137 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B54337415FF4DEF002CE137 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0B54337915FF4DEF002CE137 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0B54337A15FF4DEF002CE137 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0B54337C15FF4DEF002CE137 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "gglocker/gglocker-Prefix.pch";
+				INFOPLIST_FILE = "gglocker/gglocker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0B54337D15FF4DEF002CE137 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "gglocker/gglocker-Prefix.pch";
+				INFOPLIST_FILE = "gglocker/gglocker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0B54335715FF4DEE002CE137 /* Build configuration list for PBXProject "gglocker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B54337915FF4DEF002CE137 /* Debug */,
+				0B54337A15FF4DEF002CE137 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B54337B15FF4DEF002CE137 /* Build configuration list for PBXNativeTarget "gglocker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B54337C15FF4DEF002CE137 /* Debug */,
+				0B54337D15FF4DEF002CE137 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0B54335415FF4DEE002CE137 /* Project object */;
+}
