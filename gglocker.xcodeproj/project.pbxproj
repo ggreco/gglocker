@@ -22,6 +22,8 @@
 		0B54339515FF6E3E002CE137 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54339415FF6E3E002CE137 /* MainViewController.m */; };
 		0B54339815FF9377002CE137 /* NSString_Md5Support.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54339715FF9377002CE137 /* NSString_Md5Support.m */; };
 		0B54339B15FF9722002CE137 /* Logoff.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54339A15FF9722002CE137 /* Logoff.m */; };
+		0BDB8E5616008D6600FC8A35 /* ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDB8E5516008D6600FC8A35 /* ListCell.m */; };
+		0BDB8E5A1600989800FC8A35 /* ItemHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDB8E591600989800FC8A35 /* ItemHandling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,10 @@
 		0B54339715FF9377002CE137 /* NSString_Md5Support.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_Md5Support.m; sourceTree = "<group>"; };
 		0B54339915FF9722002CE137 /* Logoff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logoff.h; sourceTree = "<group>"; };
 		0B54339A15FF9722002CE137 /* Logoff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logoff.m; sourceTree = "<group>"; };
+		0BDB8E5416008D6600FC8A35 /* ListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCell.h; sourceTree = "<group>"; };
+		0BDB8E5516008D6600FC8A35 /* ListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCell.m; sourceTree = "<group>"; };
+		0BDB8E581600989800FC8A35 /* ItemHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemHandling.h; sourceTree = "<group>"; };
+		0BDB8E591600989800FC8A35 /* ItemHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemHandling.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,10 @@
 				0B54339715FF9377002CE137 /* NSString_Md5Support.m */,
 				0B54339915FF9722002CE137 /* Logoff.h */,
 				0B54339A15FF9722002CE137 /* Logoff.m */,
+				0BDB8E5416008D6600FC8A35 /* ListCell.h */,
+				0BDB8E5516008D6600FC8A35 /* ListCell.m */,
+				0BDB8E581600989800FC8A35 /* ItemHandling.h */,
+				0BDB8E591600989800FC8A35 /* ItemHandling.m */,
 			);
 			path = gglocker;
 			sourceTree = "<group>";
@@ -206,6 +216,8 @@
 				0B54339515FF6E3E002CE137 /* MainViewController.m in Sources */,
 				0B54339815FF9377002CE137 /* NSString_Md5Support.m in Sources */,
 				0B54339B15FF9722002CE137 /* Logoff.m in Sources */,
+				0BDB8E5616008D6600FC8A35 /* ListCell.m in Sources */,
+				0BDB8E5A1600989800FC8A35 /* ItemHandling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +333,7 @@
 				0B54337D15FF4DEF002CE137 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

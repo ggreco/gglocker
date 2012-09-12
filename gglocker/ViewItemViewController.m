@@ -13,6 +13,8 @@
 @end
 
 @implementation ViewItemViewController
+@synthesize labelDesc;
+@synthesize textContents, key, value;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,10 +29,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.textContents.text = self.value;
+    self.labelDesc.text = self.key;
 }
 
 - (void)viewDidUnload
 {
+    [self setLabelDesc:nil];
+    [self setTextContents:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

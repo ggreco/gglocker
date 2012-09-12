@@ -7,16 +7,35 @@
 //
 
 #import "MainViewController.h"
-
-@interface MainViewController ()
-
-@end
+#import "ListCell.h"
+#import <Foundation/NSFileManager.h>
+#import "NewItemViewController.h"
+#import "ViewItemViewController.h"
 
 @implementation MainViewController
+@synthesize tableview;
 
-- (id)initWithStyle:(UITableViewStyle)style
+@synthesize itemList, selectedRow, dbname;
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    self = [super initWithStyle:style];
+    NSLog(@"Going to: %@", [segue identifier]);
+    
+    if ([[segue identifier] isEqualToString:@"NewItem"]) {
+        NewItemViewController *nictrl = segue.destinationViewController;
+        nictrl.previous = self;
+    }
+    else if ([[segue identifier] isEqualToString:@"ViewItem"]) {
+        ViewItemViewController *ctrl = segue.destinationViewController;
+        NSMutableDictionary *dict = [self.itemList objectAtIndex:selectedRow.row];
+        ctrl.key = [[dict allKeys] objectAtIndex:0];
+        ctrl.value =[dict objectForKey:ctrl.key];
+    }
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
@@ -32,10 +51,21 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.dbname = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"/db"];
+    NSLog(@"Checking action for DB %@", self.dbname);
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:self.dbname]) {
+        itemList = [NSMutableArray arrayWithContentsOfFile:self.dbname];
+        NSLog(@"Loaded database with %d items", [itemList count]);
+    }
+    else {
+        itemList = [[NSMutableArray alloc] init];
+        NSLog(@"Create new empty database");
+    }
 }
-
 - (void)viewDidUnload
 {
+    [self setTableview:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -50,25 +80,23 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.itemList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"ItemCell";
+    ListCell *cell = (ListCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
-    
+    cell.textLabel.text = [[[self.itemList objectAtIndex:indexPath.row] allKeys] objectAtIndex:0];
     return cell;
 }
 
@@ -113,15 +141,17 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSIndexPath*)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    self.selectedRow = indexPath;
+    return indexPath;
 }
 
+-(void)addObject:(NSMutableDictionary *)dict
+{
+    [self.itemList addObject:dict];
+    BOOL rc = [self.itemList writeToFile:self.dbname atomically:NO];
+    [self.tableview reloadData];
+    NSLog(@"Writing to %@ %@", self.dbname, (rc ? @"OK" : @"FAILED"));
+}
 @end

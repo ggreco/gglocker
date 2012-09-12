@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewItemViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UILabel *labelDesc;
+@property (weak, nonatomic) IBOutlet UITextView *textContents;
+@property (strong, nonatomic) NSString *key, *value;
 @end

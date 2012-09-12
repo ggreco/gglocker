@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewItemViewController : UIViewController
+@class MainViewController;
 
+@interface NewItemViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
+@property (weak, nonatomic) IBOutlet UITextView *textDetail;
+@property (weak, nonatomic) IBOutlet UITextField *textDesc;
+@property (weak, nonatomic) MainViewController *previous;
 @end

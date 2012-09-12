@@ -14,4 +14,18 @@
             ];
 }
 
+- (NSData *)encrypt:(NSString*)pwd
+{
+    NSData *encryptedData = self;
+    
+    return encryptedData;
+}
 @end
+
+@implementation NSData(MD5Support)
+- (NSString *)decrypt:(NSString*)pwd
+{
+   return @"";
+}
+@end
+    

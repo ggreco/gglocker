@@ -10,4 +10,9 @@
 
 @interface NSString (MD5Support)
 - (NSString *) md5;
+- (NSData *)encrypt:(NSString *) pwd;
+@end
+
+@interface NSData (MD5Support)
+- (NSString *)decrypt:(NSString *) pwd;
 @end
