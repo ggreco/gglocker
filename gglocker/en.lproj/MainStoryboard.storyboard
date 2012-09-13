@@ -133,7 +133,11 @@
                         <color key="backgroundColor" white="0.90145985399999995" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="View Item" id="jxB-i6-qsl">
-                        <barButtonItem key="rightBarButtonItem" title="Delete" id="udo-uS-7UA"/>
+                        <barButtonItem key="rightBarButtonItem" title="Delete" id="udo-uS-7UA">
+                            <connections>
+                                <segue destination="dRE-67-cfk" kind="custom" identifier="DelItem" customClass="ItemDeleted" id="lJi-Ko-vYf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="labelDesc" destination="6hr-m3-EgF" id="Xdc-uJ-lEK"/>
@@ -348,11 +352,11 @@
             </objects>
             <point key="canvasLocation" x="2208" y="728"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Base Controller-->
         <scene sceneID="FD3-SC-0hj">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iWL-co-y1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController storyboardIdentifier="NavCtrl" id="4bk-yB-RHr" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavCtrl" id="4bk-yB-RHr" customClass="BaseController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XeH-cc-wNd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -367,53 +371,6 @@
             <point key="canvasLocation" x="1398" y="138"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="ChangePasswordViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChangePasswordViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="passwordchange_clicked:"/>
-                <relationship kind="outlet" name="old_pwd" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="retype_pwd" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="thenew_pwd" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ListCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cellLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="LoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="newuser_label" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pwd" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="pwdlabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="retype_field" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="retype_label" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="NewItemViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewItemViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="textDesc" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="textDetail" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="ViewItemViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewItemViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="labelDesc" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="textContents" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

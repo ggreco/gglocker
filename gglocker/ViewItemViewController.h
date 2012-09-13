@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewItemViewController : UIViewController
+@class MainViewController;
+
+@interface ViewItemViewController : UIViewController <UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *labelDesc;
 @property (weak, nonatomic) IBOutlet UITextView *textContents;
-@property (strong, nonatomic) NSString *key, *value;
 @end

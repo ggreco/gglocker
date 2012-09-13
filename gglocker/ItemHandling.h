@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface NewItemAdded : UIStoryboardSegue
+@end
 
+@interface ItemDeleted : UIStoryboardSegue <UIAlertViewDelegate>
 @end

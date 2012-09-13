@@ -7,14 +7,12 @@
 //
 
 #import "ViewItemViewController.h"
-
-@interface ViewItemViewController ()
-
-@end
+#import "MainViewController.h"
+#import "BaseController.h"
+#import "NSString_Md5Support.h"
 
 @implementation ViewItemViewController
-@synthesize labelDesc;
-@synthesize textContents, key, value;
+@synthesize labelDesc, textContents;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,9 +26,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    BaseController *b = (BaseController*)self.navigationController;
+    NSMutableDictionary *dict = [b.itemList objectAtIndex:b.selectedRow.row];
+    NSString *key = [[dict allKeys] objectAtIndex:0];
 	// Do any additional setup after loading the view.
-    self.textContents.text = self.value;
-    self.labelDesc.text = self.key;
+    self.textContents.text = [[dict objectForKey:key] decrypt:b.pwd];
+    self.labelDesc.text = [key decrypt:b.pwd];
+}
+
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    if (buttonIndex != [alertView cancelButtonIndex]) {
+        BaseController *b = (BaseController*)self.navigationController;
+        [b delObject:b.selectedRow];
+        [b popViewControllerAnimated:YES];
+    }
 }
 
 - (void)viewDidUnload

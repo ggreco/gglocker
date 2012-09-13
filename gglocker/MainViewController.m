@@ -11,26 +11,15 @@
 #import <Foundation/NSFileManager.h>
 #import "NewItemViewController.h"
 #import "ViewItemViewController.h"
+#import "NSString_Md5Support.h"
+#import "BaseController.h"
 
 @implementation MainViewController
 @synthesize tableview;
 
-@synthesize itemList, selectedRow, dbname;
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSLog(@"Going to: %@", [segue identifier]);
-    
-    if ([[segue identifier] isEqualToString:@"NewItem"]) {
-        NewItemViewController *nictrl = segue.destinationViewController;
-        nictrl.previous = self;
-    }
-    else if ([[segue identifier] isEqualToString:@"ViewItem"]) {
-        ViewItemViewController *ctrl = segue.destinationViewController;
-        NSMutableDictionary *dict = [self.itemList objectAtIndex:selectedRow.row];
-        ctrl.key = [[dict allKeys] objectAtIndex:0];
-        ctrl.value =[dict objectForKey:ctrl.key];
-    }
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -45,23 +34,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.dbname = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"/db"];
-    NSLog(@"Checking action for DB %@", self.dbname);
-    
-    if ([[NSFileManager defaultManager] fileExistsAtPath:self.dbname]) {
-        itemList = [NSMutableArray arrayWithContentsOfFile:self.dbname];
-        NSLog(@"Loaded database with %d items", [itemList count]);
-    }
-    else {
-        itemList = [[NSMutableArray alloc] init];
-        NSLog(@"Create new empty database");
-    }
+    BaseController *b = (BaseController *)self.navigationController;
+    b.tableview = self.tableview;
 }
 - (void)viewDidUnload
 {
@@ -87,7 +61,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.itemList count];
+    BaseController *b = (BaseController *)self.navigationController;
+    return [b.itemList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -96,7 +71,8 @@
     ListCell *cell = (ListCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
-    cell.textLabel.text = [[[self.itemList objectAtIndex:indexPath.row] allKeys] objectAtIndex:0];
+    BaseController *b = (BaseController*)self.navigationController;
+    cell.textLabel.text = [[[[b.itemList objectAtIndex:indexPath.row] allKeys] objectAtIndex:0] decrypt:b.pwd];
     return cell;
 }
 
@@ -143,15 +119,9 @@
 
 - (NSIndexPath*)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.selectedRow = indexPath;
+    BaseController *b = (BaseController *)self.navigationController;
+    b.selectedRow = indexPath;
     return indexPath;
 }
 
--(void)addObject:(NSMutableDictionary *)dict
-{
-    [self.itemList addObject:dict];
-    BOOL rc = [self.itemList writeToFile:self.dbname atomically:NO];
-    [self.tableview reloadData];
-    NSLog(@"Writing to %@ %@", self.dbname, (rc ? @"OK" : @"FAILED"));
-}
 @end

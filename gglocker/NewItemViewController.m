@@ -10,7 +10,7 @@
 
 @implementation NewItemViewController
 @synthesize textDetail;
-@synthesize textDesc, previous;
+@synthesize textDesc;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
