@@ -44,7 +44,6 @@
     disk_md5_pwd = [NSString stringWithContentsOfFile:[dir stringByAppendingPathComponent:@"/identity"] encoding:NSUTF8StringEncoding error:nil];
     
     if (disk_md5_pwd) {
-        NSLog(@"Starting with pwd %@", disk_md5_pwd);
         [self.retype_field setHidden:YES];
         [self.newuser_label setHidden:YES];
         [self.retype_label setHidden:YES];

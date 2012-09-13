@@ -7,6 +7,7 @@
 //
 
 #import "BaseController.h"
+#import "NSString_Md5Support.h"
 
 @interface BaseController ()
 
@@ -21,6 +22,25 @@
     if (self) {
     }
     return self;
+}
+
+-(void)changePassword:(NSString*)new_pwd
+{
+    NSMutableArray *newList = [[NSMutableArray alloc] init];
+    
+    for (size_t i = 0; i < [self.itemList count]; ++i) {
+        NSMutableDictionary *d = [self.itemList objectAtIndex:i];
+        NSString *key = [[d allKeys] objectAtIndex:0];
+        NSString *value =[d objectForKey:key];
+        
+        NSMutableDictionary *n = [[NSMutableDictionary alloc] init];
+        [n setObject:[[value decrypt:self.pwd] encrypt:new_pwd]
+              forKey:[[key decrypt:self.pwd] encrypt:new_pwd] ];
+        [newList addObject:n];
+    }
+    self.itemList = newList;
+    self.pwd = new_pwd;
+    [self.itemList writeToFile:self.dbname atomically:NO];
 }
 
 - (void)viewDidLoad

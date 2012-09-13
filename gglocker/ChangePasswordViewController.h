@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChangePasswordViewController : UIViewController <UITextFieldDelegate>
+@class KeyboardHelper;
+
+@interface ChangePasswordViewController : UIViewController <UITextFieldDelegate> 
 
 @property (weak, nonatomic) IBOutlet UITextField *old_pwd;
 @property (weak, nonatomic) IBOutlet UITextField *retype_pwd;
 @property (weak, nonatomic) IBOutlet UITextField *thenew_pwd;
 - (IBAction)passwordchange_clicked:(id)sender;
-
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
+@property (retain, nonatomic) KeyboardHelper *helper;
 @end

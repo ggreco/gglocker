@@ -7,9 +7,11 @@
 //
 
 #import "NewItemViewController.h"
+#import "KeyboardHelper.h"
 
 @implementation NewItemViewController
 @synthesize textDetail;
+@synthesize scrollview;
 @synthesize textDesc;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -25,15 +27,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self.textDesc setDelegate:self];
-    [self.textDetail setDelegate:self];
+    self.helper = [[KeyboardHelper alloc] initWithView:self.scrollview];
 }
 
 - (void)viewDidUnload
 {
     [self setTextDetail:nil];
     [self setTextDesc:nil];
+    [self setScrollview:nil];
     [super viewDidUnload];
+    self.helper = nil;
     // Release any retained subviews of the main view.
 }
 
@@ -45,32 +48,6 @@
 -(BOOL)textFieldShouldReturn:(UITextField*)textfield
 {
     [textfield resignFirstResponder];
-    return YES;
-}
-
--(void) moveUp:(UITextView*)tf up:(BOOL)up
-{
-    const int d = 80;
-    const float speed = 0.3f;
-    
-    int movement = (up ? -d: d);
-    [UIView beginAnimations:@"anim"  context:nil];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    [UIView setAnimationDuration:speed];
-    
-    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
-    [UIView commitAnimations];
-}
-
--(BOOL)textViewShouldBeginEditing:(UITextView *)textView
-{
-    [self moveUp:textView up:YES];
-    return YES;
-}
-
--(BOOL)textViewShouldEndEditing:(UITextView *)textView
-{
-    [self moveUp:textView up:NO];
     return YES;
 }
 

@@ -25,6 +25,7 @@
 		0BDB8E5616008D6600FC8A35 /* ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDB8E5516008D6600FC8A35 /* ListCell.m */; };
 		0BDB8E5A1600989800FC8A35 /* ItemHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDB8E591600989800FC8A35 /* ItemHandling.m */; };
 		0BDB8E611601D86000FC8A35 /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDB8E601601D85F00FC8A35 /* BaseController.m */; };
+		0BDB8E65160221AD00FC8A35 /* KeyboardHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDB8E64160221AD00FC8A35 /* KeyboardHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,8 @@
 		0BDB8E591600989800FC8A35 /* ItemHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemHandling.m; sourceTree = "<group>"; };
 		0BDB8E5F1601D85F00FC8A35 /* BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseController.h; sourceTree = "<group>"; };
 		0BDB8E601601D85F00FC8A35 /* BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseController.m; sourceTree = "<group>"; };
+		0BDB8E63160221AC00FC8A35 /* KeyboardHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardHelper.h; sourceTree = "<group>"; };
+		0BDB8E64160221AD00FC8A35 /* KeyboardHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,8 @@
 				0BDB8E591600989800FC8A35 /* ItemHandling.m */,
 				0BDB8E5F1601D85F00FC8A35 /* BaseController.h */,
 				0BDB8E601601D85F00FC8A35 /* BaseController.m */,
+				0BDB8E63160221AC00FC8A35 /* KeyboardHelper.h */,
+				0BDB8E64160221AD00FC8A35 /* KeyboardHelper.m */,
 			);
 			path = gglocker;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 				0BDB8E5616008D6600FC8A35 /* ListCell.m in Sources */,
 				0BDB8E5A1600989800FC8A35 /* ItemHandling.m in Sources */,
 				0BDB8E611601D86000FC8A35 /* BaseController.m in Sources */,
+				0BDB8E65160221AD00FC8A35 /* KeyboardHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class KeyboardHelper;
 @class MainViewController;
 
 @interface NewItemViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *textDetail;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
 @property (weak, nonatomic) IBOutlet UITextField *textDesc;
+@property (retain, nonatomic) KeyboardHelper *helper;
 @end

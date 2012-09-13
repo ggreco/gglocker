@@ -8,12 +8,16 @@
 
 #import "ChangePasswordViewController.h"
 #import "NSString_Md5Support.h"
+#import "BaseController.h"
+#import "KeyboardHelper.h"
 
 @interface ChangePasswordViewController ()
 
 @end
 
+
 @implementation ChangePasswordViewController
+@synthesize scrollview;
 @synthesize old_pwd;
 @synthesize retype_pwd;
 @synthesize thenew_pwd;
@@ -31,9 +35,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [old_pwd setDelegate:self];
-    [thenew_pwd setDelegate:self];
-    [retype_pwd setDelegate:self];
+
+    // register for keyboard notifications
+    self.helper = [[KeyboardHelper alloc] initWithView:self.scrollview];
+}
+
+-(void)dealloc
+{
     
 }
 
@@ -42,8 +50,10 @@
     [self setOld_pwd:nil];
     [self setRetype_pwd:nil];
     [self setThenew_pwd:nil];
+    [self setScrollview:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+    self.helper = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -57,6 +67,11 @@
         NSString *disk_pwd = [NSString stringWithContentsOfFile:id encoding:NSUTF8StringEncoding error:nil];
         if (!disk_pwd || [disk_pwd isEqualToString:[old_pwd.text md5]]) {
              [[thenew_pwd.text md5] writeToFile:id atomically:NO encoding:NSUTF8StringEncoding error:nil];
+            BaseController *b = (BaseController *)self.navigationController;
+            [b changePassword:thenew_pwd.text];
+            [b popViewControllerAnimated:YES];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Password changed." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alert show];
         }
         else {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WARNING" message:@"The old password is wrong!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
@@ -65,10 +80,17 @@
         }
     }
     else {
+        NSLog(@"Mismatch: %@ != %@", thenew_pwd.text, retype_pwd.text);
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WARNING" message:@"Password mismatch in confirmation text!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
         thenew_pwd.text = @"";
         retype_pwd.text = @"";
     }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 @end
