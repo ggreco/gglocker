@@ -30,7 +30,9 @@
     NSMutableDictionary *dict = [b.itemList objectAtIndex:b.selectedRow.row];
     NSString *key = [[dict allKeys] objectAtIndex:0];
 	// Do any additional setup after loading the view.
+    //NSLog(@"Crypted body:%@, decrypted:%@", [dict objectForKey:key], [[dict objectForKey:key] decrypt:b.pwd]);
     self.textContents.text = [[dict objectForKey:key] decrypt:b.pwd];
+    //NSLog(@"Crypted key:%@, decrypted:%@", key, [key decrypt:b.pwd]);
     self.labelDesc.text = [key decrypt:b.pwd];
 }
 
