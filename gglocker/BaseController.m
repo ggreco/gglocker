@@ -72,13 +72,18 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(void)saveObjects
+{
+    [self.itemList writeToFile:self.dbname atomically:NO];
+    if (self.tableview)
+        [self.tableview reloadData];
+}
+
 -(void)addObject:(NSMutableDictionary *)dict
 {
     NSLog(@"Adding new item with key %@", [[dict allKeys] objectAtIndex:0]);
     [self.itemList addObject:dict];
-    [self.itemList writeToFile:self.dbname atomically:NO];
-    if (self.tableview)
-        [self.tableview reloadData];
+    [self saveObjects];
 }
 -(void)delObject:(NSIndexPath *)row
 {

@@ -17,5 +17,6 @@
 
 -(void)addObject:(NSMutableDictionary*)dict;
 -(void)delObject:(NSIndexPath *)row;
+-(void)saveObjects;
 -(void)changePassword:(NSString *)new_pwd;
 @end

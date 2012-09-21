@@ -9,8 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @class MainViewController;
+@class KeyboardHelper;
 
-@interface ViewItemViewController : UIViewController <UIAlertViewDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *labelDesc;
+@interface ViewItemViewController : UIViewController <UIAlertViewDelegate, UITextViewDelegate, UITextFieldDelegate>
+@property BOOL modifying;
+@property (weak, nonatomic) IBOutlet UITextField *textDesc;
 @property (weak, nonatomic) IBOutlet UITextView *textContents;
+@property (weak, nonatomic) IBOutlet UIButton *buttonModify;
+- (IBAction)modifyClicked:(id)sender;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
+
+@property (retain, nonatomic) KeyboardHelper *helper;
 @end

@@ -29,7 +29,17 @@
                                                  name:UIKeyboardWillHideNotification
                                                object:view.window];
     //make contentSize bigger than your scrollSize (you will need to figure out for your own use case)
-    self.scrollview.contentSize = CGSizeMake(320, 480 - 60); // 60 is navigationbar + statusbar
+    self.scrollview.contentSize = CGSizeMake(320, [[UIScreen mainScreen] bounds].size.height - 60); // 60 is navigationbar + statusbar
+    
+    NSLog(@"Initialized helper with scrollview height: %f view: %f screen:%f",
+          self.scrollview.contentSize.height,
+          [self.scrollview superview].bounds.size.height,
+          [[UIScreen mainScreen] bounds].size.height);
+    
+    for (UIView *view in self.scrollview.subviews) {
+        NSLog(@"Changing layout of son %@", view);
+        [view setNeedsLayout];
+    }
     
     return self;
 }
@@ -50,7 +60,7 @@
     
     // resize the scrollview
     CGRect viewFrame = self.scrollview.frame;
-    // I'm also subtracting a constant kTabBarHeight because my UIScrollView was offset by the UITabBar so really only the portion of the keyboard that is leftover pass the UITabBar is obscuring my UIScrollView.
+
     viewFrame.size.height += (keyboardSize.height);
     
     [UIView beginAnimations:nil context:NULL];
@@ -66,9 +76,8 @@
 - (void)keyboardWillShow:(NSNotification *)n
 {
     // This is an ivar I'm using to ensure that we do not do the frame size adjustment on the UIScrollView if the keyboard is already shown.  This can happen if the user, after fixing editing a UITextField, scrolls the resized UIScrollView to another UITextField and attempts to edit the next UITextField.  If we were to resize the UIScrollView again, it would be disastrous.  NOTE: The keyboard notification will fire even when the keyboard is already shown.
-    if (keyboardIsShown) {
+    if (keyboardIsShown)
         return;
-    }
     
     NSDictionary* userInfo = [n userInfo];
     
@@ -77,7 +86,6 @@
     
     // resize the noteView
     CGRect viewFrame = self.scrollview.frame;
-    // I'm also subtracting a constant kTabBarHeight because my UIScrollView was offset by the UITabBar so really only the portion of the keyboard that is leftover pass the UITabBar is obscuring my UIScrollView.
     viewFrame.size.height -= (keyboardSize.height);
     
     [UIView beginAnimations:nil context:NULL];
