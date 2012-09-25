@@ -1,4 +1,4 @@
-#import "NSString_Md5Support.h"
+#import "nsextensions.h"
 #import <CommonCrypto/CommonDigest.h>
 #import <CommonCrypto/CommonCryptor.h>
 
@@ -154,7 +154,7 @@ static char base64EncodingTable[64] = {
     NSMutableString *result;
     
     lentext = [self length];
-    int length = [self length];
+    size_t length = [self length];
     
     if (lentext < 1)
         return @"";
