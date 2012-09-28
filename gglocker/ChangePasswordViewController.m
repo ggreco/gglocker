@@ -7,7 +7,7 @@
 //
 
 #import "ChangePasswordViewController.h"
-#import "NSString_Md5Support.h"
+#import "nsextensions.h"
 #import "BaseController.h"
 #import "KeyboardHelper.h"
 

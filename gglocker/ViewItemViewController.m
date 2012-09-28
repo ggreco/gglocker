@@ -9,7 +9,7 @@
 #import "ViewItemViewController.h"
 #import "MainViewController.h"
 #import "BaseController.h"
-#import "NSString_Md5Support.h"
+#import "nsextensions.h"
 #import "KeyboardHelper.h"
 
 @implementation ViewItemViewController

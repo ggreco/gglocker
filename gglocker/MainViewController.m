@@ -11,7 +11,7 @@
 #import <Foundation/NSFileManager.h>
 #import "NewItemViewController.h"
 #import "ViewItemViewController.h"
-#import "NSString_Md5Support.h"
+#import "nsextensions.h"
 #import "BaseController.h"
 
 @implementation MainViewController

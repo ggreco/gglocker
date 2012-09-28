@@ -11,7 +11,7 @@
 #import "NewItemViewController.h"
 #import "MainViewController.h"
 #import "BaseController.h"
-#import "NSString_Md5Support.h"
+#import "nsextensions.h"
 
 @implementation NewItemAdded
 

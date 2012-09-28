@@ -20,7 +20,7 @@
 		0B54338F15FF6DD9002CE137 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54338E15FF6DD9002CE137 /* ChangePasswordViewController.m */; };
 		0B54339215FF6DF4002CE137 /* ViewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54339115FF6DF4002CE137 /* ViewItemViewController.m */; };
 		0B54339515FF6E3E002CE137 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54339415FF6E3E002CE137 /* MainViewController.m */; };
-		0B54339815FF9377002CE137 /* NSString_Md5Support.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54339715FF9377002CE137 /* NSString_Md5Support.m */; };
+		0B54339815FF9377002CE137 /* nsextensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54339715FF9377002CE137 /* nsextensions.m */; };
 		0B54339B15FF9722002CE137 /* Logoff.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54339A15FF9722002CE137 /* Logoff.m */; };
 		0B5BCA1616077F8C00D33571 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5BCA1516077F8C00D33571 /* icon.png */; };
 		0B5BCA1916077F9100D33571 /* icon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5BCA1816077F9100D33571 /* icon-retina.png */; };
@@ -57,8 +57,8 @@
 		0B54339115FF6DF4002CE137 /* ViewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewItemViewController.m; sourceTree = "<group>"; };
 		0B54339315FF6E3E002CE137 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		0B54339415FF6E3E002CE137 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		0B54339615FF932B002CE137 /* NSString_Md5Support.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSString_Md5Support.h; sourceTree = "<group>"; };
-		0B54339715FF9377002CE137 /* NSString_Md5Support.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_Md5Support.m; sourceTree = "<group>"; };
+		0B54339615FF932B002CE137 /* nsextensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nsextensions.h; sourceTree = "<group>"; };
+		0B54339715FF9377002CE137 /* nsextensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nsextensions.m; sourceTree = "<group>"; };
 		0B54339915FF9722002CE137 /* Logoff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logoff.h; sourceTree = "<group>"; };
 		0B54339A15FF9722002CE137 /* Logoff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logoff.m; sourceTree = "<group>"; };
 		0B5BCA1516077F8C00D33571 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
@@ -137,8 +137,8 @@
 				0B54339115FF6DF4002CE137 /* ViewItemViewController.m */,
 				0B54339315FF6E3E002CE137 /* MainViewController.h */,
 				0B54339415FF6E3E002CE137 /* MainViewController.m */,
-				0B54339615FF932B002CE137 /* NSString_Md5Support.h */,
-				0B54339715FF9377002CE137 /* NSString_Md5Support.m */,
+				0B54339615FF932B002CE137 /* nsextensions.h */,
+				0B54339715FF9377002CE137 /* nsextensions.m */,
 				0B54339915FF9722002CE137 /* Logoff.h */,
 				0B54339A15FF9722002CE137 /* Logoff.m */,
 				0BDB8E5416008D6600FC8A35 /* ListCell.h */,
@@ -252,7 +252,7 @@
 				0B54338F15FF6DD9002CE137 /* ChangePasswordViewController.m in Sources */,
 				0B54339215FF6DF4002CE137 /* ViewItemViewController.m in Sources */,
 				0B54339515FF6E3E002CE137 /* MainViewController.m in Sources */,
-				0B54339815FF9377002CE137 /* NSString_Md5Support.m in Sources */,
+				0B54339815FF9377002CE137 /* nsextensions.m in Sources */,
 				0B54339B15FF9722002CE137 /* Logoff.m in Sources */,
 				0BDB8E5616008D6600FC8A35 /* ListCell.m in Sources */,
 				0BDB8E5A1600989800FC8A35 /* ItemHandling.m in Sources */,
@@ -291,7 +291,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gabriele Greco (MW5JBRQPH4)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -306,6 +306,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D34693A0-A3EE-4100-B2E2-36DA8115619C";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -318,7 +319,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gabriele Greco (MW5JBRQPH4)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -327,6 +328,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D34693A0-A3EE-4100-B2E2-36DA8115619C";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
