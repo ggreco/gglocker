@@ -204,6 +204,11 @@
 			attributes = {
 				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "Gabriele Greco";
+				TargetAttributes = {
+					0B54335C15FF4DEE002CE137 = {
+						DevelopmentTeam = QHDC6VT2N4;
+					};
+				};
 			};
 			buildConfigurationList = 0B54335715FF4DEE002CE137 /* Build configuration list for PBXProject "gglocker" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -337,12 +342,13 @@
 		0B54337C15FF4DEF002CE137 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Gabriele Greco (MW5JBRQPH4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "gglocker/gglocker-Prefix.pch";
 				INFOPLIST_FILE = "gglocker/gglocker-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "23621A4C-7D5B-471B-AB53-96FEC4C7CBFD";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -350,12 +356,13 @@
 		0B54337D15FF4DEF002CE137 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Gabriele Greco (MW5JBRQPH4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "gglocker/gglocker-Prefix.pch";
 				INFOPLIST_FILE = "gglocker/gglocker-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "23621A4C-7D5B-471B-AB53-96FEC4C7CBFD";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

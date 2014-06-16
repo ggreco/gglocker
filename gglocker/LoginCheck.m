@@ -20,8 +20,8 @@
     NSLog(@"Dest: %@", dst);
     if (src.disk_md5_pwd) {
         if ([src.disk_md5_pwd isEqualToString:[src.pwd.text md5]]) {
-            src.view.window.rootViewController = dst;
             dst.pwd = src.pwd.text;
+            src.view.window.rootViewController = dst;
         }
         else {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WARNING" message:@"Wrong password!" delegate:src cancelButtonTitle:@"Ok" otherButtonTitles:nil];

@@ -35,7 +35,9 @@
 {
     [super viewDidLoad];
     BaseController *b = (BaseController *)self.navigationController;
+    NSLog(@"Loaded MainView..");
     b.tableview = self.tableview;
+    [self.tableview reloadData];
 }
 - (void)viewDidUnload
 {
