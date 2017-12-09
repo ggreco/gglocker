@@ -29,7 +29,7 @@
                                                  name:UIKeyboardWillHideNotification
                                                object:view.window];
     //make contentSize bigger than your scrollSize (you will need to figure out for your own use case)
-    self.scrollview.contentSize = CGSizeMake(320, [[UIScreen mainScreen] bounds].size.height - 60); // 60 is navigationbar + statusbar
+    self.scrollview.contentSize = CGSizeMake(320, [[UIScreen mainScreen] bounds].size.height - 40 - [UIApplication sharedApplication].statusBarFrame.size.height); // 60 is navigationbar + statusbar
     
     NSLog(@"Initialized helper with scrollview height: %f view: %f screen:%f",
           self.scrollview.contentSize.height,
