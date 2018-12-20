@@ -27,6 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+
     BaseController *b = (BaseController*)self.navigationController;
     NSMutableDictionary *dict = [b.itemList objectAtIndex:b.selectedRow.row];
     NSString *key = [[dict allKeys] objectAtIndex:0];
@@ -40,6 +43,10 @@
     [self.textDesc setEnabled:NO];
     self.helper = [[KeyboardHelper alloc] initWithView:self.scrollview];
 
+}
+
+-(void)dismissKeyboard {
+    [self.textContents resignFirstResponder];
 }
 
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="2064" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,7 +34,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Insert your password:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="TGu-fs-2w5">
-                                <rect key="frame" x="0.0" y="233.5" width="320" height="48"/>
+                                <rect key="frame" x="0.0" y="233" width="320" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -56,7 +56,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Nhj-fa-eEz">
-                                <rect key="frame" x="60" y="420.5" width="201" height="31"/>
+                                <rect key="frame" x="60" y="420" width="201" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
@@ -207,11 +207,18 @@
                                 <rect key="frame" x="0.0" y="559" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Add Item" id="Mlm-Bm-N4K">
+                                    <barButtonItem systemItem="add" id="Mlm-Bm-N4K">
                                         <connections>
                                             <segue destination="Ke8-2S-16N" kind="push" identifier="NewItem" id="5I6-1z-bMi"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem width="42" systemItem="fixedSpace" id="MY6-Ag-3O8"/>
+                                    <barButtonItem systemItem="action" id="Lht-xb-oSv">
+                                        <connections>
+                                            <action selector="exportClicked:" destination="dRE-67-cfk" id="J3m-QM-hNB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="xNw-zW-LRy"/>
                                     <barButtonItem title="Change Password" id="ajT-Tw-A05">
                                         <connections>
                                             <segue destination="cfc-hc-OrU" kind="push" identifier="ChangePassword" id="ySg-Zu-cbD"/>
@@ -413,6 +420,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="5I6-1z-bMi"/>
         <segue reference="BqS-0q-j38"/>
     </inferredMetricsTieBreakers>
 </document>

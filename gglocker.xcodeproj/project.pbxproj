@@ -27,6 +27,7 @@
 		0B90CFC616071D7500106CB4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B90CFC516071D7500106CB4 /* Default.png */; };
 		0B90CFC916071D7C00106CB4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B90CFC816071D7C00106CB4 /* Default@2x.png */; };
 		0B90CFCB16071D8500106CB4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B90CFCA16071D8500106CB4 /* Default-568h@2x.png */; };
+		0BCB3C2E21CB92910012FED1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BCB3C2D21CB92910012FED1 /* Launch Screen.storyboard */; };
 		0BDB8E5616008D6600FC8A35 /* ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDB8E5516008D6600FC8A35 /* ListCell.m */; };
 		0BDB8E5A1600989800FC8A35 /* ItemHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDB8E591600989800FC8A35 /* ItemHandling.m */; };
 		0BDB8E611601D86000FC8A35 /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDB8E601601D85F00FC8A35 /* BaseController.m */; };
@@ -66,6 +67,7 @@
 		0B90CFC516071D7500106CB4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		0B90CFC816071D7C00106CB4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		0B90CFCA16071D8500106CB4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		0BCB3C2D21CB92910012FED1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0BDB8E5416008D6600FC8A35 /* ListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCell.h; sourceTree = "<group>"; };
 		0BDB8E5516008D6600FC8A35 /* ListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCell.m; sourceTree = "<group>"; };
 		0BDB8E581600989800FC8A35 /* ItemHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemHandling.h; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				0B54336A15FF4DEF002CE137 /* InfoPlist.strings */,
 				0B54336D15FF4DEF002CE137 /* main.m */,
 				0B54336F15FF4DEF002CE137 /* gglocker-Prefix.pch */,
+				0BCB3C2D21CB92910012FED1 /* Launch Screen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -207,7 +210,7 @@
 				TargetAttributes = {
 					0B54335C15FF4DEE002CE137 = {
 						DevelopmentTeam = 26P4KFB7Z3;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -235,6 +238,7 @@
 			files = (
 				0B54336C15FF4DEF002CE137 /* InfoPlist.strings in Resources */,
 				0B54337515FF4DEF002CE137 /* MainStoryboard.storyboard in Resources */,
+				0BCB3C2E21CB92910012FED1 /* Launch Screen.storyboard in Resources */,
 				0B90CFC616071D7500106CB4 /* Default.png in Resources */,
 				0B90CFC916071D7C00106CB4 /* Default@2x.png in Resources */,
 				0B90CFCB16071D8500106CB4 /* Default-568h@2x.png in Resources */,
@@ -325,7 +329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -360,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -373,15 +377,15 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 26P4KFB7Z3;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "gglocker/gglocker-Prefix.pch";
 				INFOPLIST_FILE = "gglocker/gglocker-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.ggsoft.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "edb7d8f3-955e-4c7c-ab1e-1456977c4489";
-				PROVISIONING_PROFILE_SPECIFIER = "ios generic";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -391,7 +395,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "gglocker/gglocker-Prefix.pch";
