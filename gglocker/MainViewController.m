@@ -15,6 +15,11 @@
 #import "BaseController.h"
 
 @implementation MainViewController
+
+- (IBAction)exportClicked:(id)sender {
+    NSLog(@"Export clicked!");
+}
+
 @synthesize tableview;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
