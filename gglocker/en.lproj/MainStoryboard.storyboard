@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="height" constant="40" id="pY2-Gt-hAb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="continue" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yjf-yG-k3h">
                                 <rect key="frame" x="0.0" y="577" width="375" height="50"/>
@@ -287,11 +287,18 @@
                                 <rect key="frame" x="0.0" y="559" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Add Item" id="Mlm-Bm-N4K">
+                                    <barButtonItem systemItem="add" id="Mlm-Bm-N4K">
                                         <connections>
                                             <segue destination="Ke8-2S-16N" kind="push" identifier="NewItem" id="5I6-1z-bMi"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem width="42" systemItem="fixedSpace" id="b8N-FP-GvD"/>
+                                    <barButtonItem systemItem="action" id="s04-ZP-jpp">
+                                        <connections>
+                                            <action selector="exportClicked:" destination="dRE-67-cfk" id="5jP-MP-JeJ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="Q4h-W7-OWu"/>
                                     <barButtonItem title="Change Password" id="ajT-Tw-A05">
                                         <connections>
                                             <segue destination="cfc-hc-OrU" kind="push" identifier="ChangePassword" id="ySg-Zu-cbD"/>
@@ -580,6 +587,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lJi-Ko-vYf"/>
+        <segue reference="BqS-0q-j38"/>
     </inferredMetricsTieBreakers>
 </document>

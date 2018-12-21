@@ -11,5 +11,5 @@
 @interface NewItemAdded : UIStoryboardSegue
 @end
 
-@interface ItemDeleted : UIStoryboardSegue <UIAlertViewDelegate>
+@interface ItemDeleted : UIStoryboardSegue
 @end

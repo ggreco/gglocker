@@ -69,19 +69,22 @@
             BaseController *b = (BaseController *)self.navigationController;
             [b changePassword:thenew_pwd.text];
             [b popViewControllerAnimated:YES];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Password changed." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-            [alert show];
+            UIAlertController *alert =  [UIAlertController alertControllerWithTitle:@"" message:@"Password changed." preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alert animated:YES completion:nil];
         }
         else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WARNING" message:@"The old password is wrong!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-            [alert show];
+            UIAlertController *alert =  [UIAlertController alertControllerWithTitle:@"WARNING" message:@"The old password is wrong!" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alert animated:YES completion:nil];
             old_pwd.text = @"";
         }
     }
     else {
         NSLog(@"Mismatch: %@ != %@", thenew_pwd.text, retype_pwd.text);
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WARNING" message:@"Password mismatch in confirmation text!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController *alert =  [UIAlertController alertControllerWithTitle:@"WARNING" message:@"Password mismatch in confirmation text!"preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
         thenew_pwd.text = @"";
         retype_pwd.text = @"";
     }

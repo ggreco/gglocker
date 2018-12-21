@@ -53,7 +53,7 @@
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:self.dbname]) {
         itemList = [NSMutableArray arrayWithContentsOfFile:self.dbname];
-        NSLog(@"Loaded database with %d items", [itemList count]);
+        NSLog(@"Loaded database with %ld items", (long)[itemList count]);
     }
     else {
         itemList = [[NSMutableArray alloc] init];
@@ -87,7 +87,7 @@
 }
 -(void)delObject:(NSIndexPath *)row
 {
-    NSLog(@"Deleting object at row %d", row.row);
+    NSLog(@"Deleting object at row %ld", (long)row.row);
     [self.itemList removeObjectAtIndex:row.row];
     [self.itemList writeToFile:self.dbname atomically:NO];
     if (self.tableview)

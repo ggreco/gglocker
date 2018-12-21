@@ -49,14 +49,6 @@
     [self.textContents resignFirstResponder];
 }
 
--(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
-    if (buttonIndex != [alertView cancelButtonIndex]) {
-        BaseController *b = (BaseController*)self.navigationController;
-        [b delObject:b.selectedRow];
-        [b popViewControllerAnimated:YES];
-    }
-}
-
 - (void)viewDidUnload
 {
     [self setTextContents:nil];
@@ -89,7 +81,7 @@
     }
     else {
         BaseController *b = (BaseController*)self.navigationController;
-        NSLog(@"Applying changes to row %d", b.selectedRow.row);
+        NSLog(@"Applying changes to row %ld", (long)b.selectedRow.row);
         NSMutableDictionary *dict = [b.itemList objectAtIndex:b.selectedRow.row];
         [dict removeAllObjects];
         [dict setObject:[self.textContents.text encrypt:b.pwd]

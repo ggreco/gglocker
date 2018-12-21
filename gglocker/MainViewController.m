@@ -18,6 +18,31 @@
 
 - (IBAction)exportClicked:(id)sender {
     NSLog(@"Export clicked!");
+    BaseController *b = (BaseController *)self.navigationController;
+    NSMutableString *output = [NSMutableString stringWithString:@"GGLocker export\n===============\n\n"];
+    
+    for (NSDictionary *d in b.itemList)
+        for (NSString *k in d) {
+            //NSLog(@"%@ -> [%@]", [k decrypt:b.pwd], [d[k] decrypt:b.pwd]);
+            NSString *dk = [k decrypt:b.pwd];
+            [output appendString:dk];
+            [output appendString:@"\n"];
+            for (int i = 0; i < [dk length]; ++i)
+                [output appendString:@"-"];
+            [output appendString:@"\n"];
+            [output appendString:[d[k] decrypt:b.pwd]];
+            [output appendString:@"\n\n"];
+        }
+
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:@[output] applicationActivities:nil];
+    activityController.excludedActivityTypes = @[
+                                                 UIActivityTypeAssignToContact,
+                                                 UIActivityTypePostToVimeo,
+                                                 UIActivityTypePostToFlickr,
+                                                 UIActivityTypeSaveToCameraRoll
+                                                 ];
+    
+    [self presentViewController:activityController animated:YES completion:nil];
 }
 
 @synthesize tableview;
@@ -43,7 +68,17 @@
     NSLog(@"Loaded MainView..");
     b.tableview = self.tableview;
     [self.tableview reloadData];
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(handleEnteredBackground)
+                                                 name: UIApplicationDidEnterBackgroundNotification
+                                               object: nil];
 }
+
+-(void)handleEnteredBackground
+{
+    [self performSegueWithIdentifier:@"Logoff" sender:self];
+}
+
 - (void)viewDidUnload
 {
     [self setTableview:nil];

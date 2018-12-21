@@ -29,8 +29,9 @@
         [b popViewControllerAnimated:YES];
     }
     else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WARNING" message:@"You cannot add an item with empty description or content!" delegate:src cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"WARNING" message:@"You cannot add an item with empty description or content!" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+        [src presentViewController:alert animated:YES completion:nil];
     }
 }
 
@@ -40,8 +41,14 @@
 
 -(void)perform {
     UIViewController *src = [self sourceViewController];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete Item" message:@"Are you sure you want to delete this item?" delegate:src cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-    [alert show];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Delete Item" message:@"Are you sure you want to delete this item?" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        BaseController *b = (BaseController*)src.navigationController;
+        [b delObject:b.selectedRow];
+        [b popViewControllerAnimated:YES];
+    }]];
+    [src presentViewController:alert animated:YES completion:nil];
 }
 
 @end

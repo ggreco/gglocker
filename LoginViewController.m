@@ -84,6 +84,9 @@
 -(BOOL)textFieldShouldReturn:(UITextField*)textfield
 {
     [textfield resignFirstResponder];
+    if (disk_md5_pwd) {
+        [self performSegueWithIdentifier:@"LoginCheck" sender:self];
+    }
     return YES;
 }
 

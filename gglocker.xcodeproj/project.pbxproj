@@ -27,7 +27,7 @@
 		0B5BCA1916077F9100D33571 /* icon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5BCA1816077F9100D33571 /* icon-retina.png */; };
 		0B90CFC616071D7500106CB4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B90CFC516071D7500106CB4 /* Default.png */; };
 		0B90CFC916071D7C00106CB4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B90CFC816071D7C00106CB4 /* Default@2x.png */; };
-		0B90CFCB16071D8500106CB4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B90CFCA16071D8500106CB4 /* Default-568h@2x.png */; };
+		0BCB3C3021CD0C3A0012FED1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BCB3C2F21CD0C3A0012FED1 /* Images.xcassets */; };
 		0BDB8E5616008D6600FC8A35 /* ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDB8E5516008D6600FC8A35 /* ListCell.m */; };
 		0BDB8E5A1600989800FC8A35 /* ItemHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDB8E591600989800FC8A35 /* ItemHandling.m */; };
 		0BDB8E611601D86000FC8A35 /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDB8E601601D85F00FC8A35 /* BaseController.m */; };
@@ -67,7 +67,7 @@
 		0B5BCA1816077F9100D33571 /* icon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-retina.png"; path = "../icon-retina.png"; sourceTree = "<group>"; };
 		0B90CFC516071D7500106CB4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		0B90CFC816071D7C00106CB4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
-		0B90CFCA16071D8500106CB4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		0BCB3C2F21CD0C3A0012FED1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0BDB8E5416008D6600FC8A35 /* ListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCell.h; sourceTree = "<group>"; };
 		0BDB8E5516008D6600FC8A35 /* ListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCell.m; sourceTree = "<group>"; };
 		0BDB8E581600989800FC8A35 /* ItemHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemHandling.h; sourceTree = "<group>"; };
@@ -151,6 +151,7 @@
 				0BDB8E601601D85F00FC8A35 /* BaseController.m */,
 				0BDB8E63160221AC00FC8A35 /* KeyboardHelper.h */,
 				0BDB8E64160221AD00FC8A35 /* KeyboardHelper.m */,
+				0BCB3C2F21CD0C3A0012FED1 /* Images.xcassets */,
 			);
 			path = gglocker;
 			sourceTree = "<group>";
@@ -172,7 +173,6 @@
 			children = (
 				0B5BCA1816077F9100D33571 /* icon-retina.png */,
 				0B5BCA1516077F8C00D33571 /* icon.png */,
-				0B90CFCA16071D8500106CB4 /* Default-568h@2x.png */,
 				0B90CFC816071D7C00106CB4 /* Default@2x.png */,
 				0B90CFC516071D7500106CB4 /* Default.png */,
 			);
@@ -210,7 +210,7 @@
 				TargetAttributes = {
 					0B54335C15FF4DEE002CE137 = {
 						DevelopmentTeam = 26P4KFB7Z3;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -237,11 +237,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B54336C15FF4DEF002CE137 /* InfoPlist.strings in Resources */,
+				0BCB3C3021CD0C3A0012FED1 /* Images.xcassets in Resources */,
 				0B54337515FF4DEF002CE137 /* MainStoryboard.storyboard in Resources */,
 				0B238BBC1FDC48F900F543AC /* Launch Screen.storyboard in Resources */,
 				0B90CFC616071D7500106CB4 /* Default.png in Resources */,
 				0B90CFC916071D7C00106CB4 /* Default@2x.png in Resources */,
-				0B90CFCB16071D8500106CB4 /* Default-568h@2x.png in Resources */,
 				0B5BCA1616077F8C00D33571 /* icon.png in Resources */,
 				0B5BCA1916077F9100D33571 /* icon-retina.png in Resources */,
 			);
@@ -375,18 +375,19 @@
 		0B54337C15FF4DEF002CE137 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 26P4KFB7Z3;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "gglocker/gglocker-Prefix.pch";
 				INFOPLIST_FILE = "gglocker/gglocker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.ggsoft.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "edb7d8f3-955e-4c7c-ab1e-1456977c4489";
-				PROVISIONING_PROFILE_SPECIFIER = "ios generic";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -394,9 +395,10 @@
 		0B54337D15FF4DEF002CE137 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "gglocker/gglocker-Prefix.pch";

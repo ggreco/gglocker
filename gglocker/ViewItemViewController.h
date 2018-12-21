@@ -11,7 +11,7 @@
 @class MainViewController;
 @class KeyboardHelper;
 
-@interface ViewItemViewController : UIViewController <UIAlertViewDelegate, UITextViewDelegate, UITextFieldDelegate>
+@interface ViewItemViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate>
 @property BOOL modifying;
 @property (weak, nonatomic) IBOutlet UITextField *textDesc;
 @property (weak, nonatomic) IBOutlet UITextView *textContents;

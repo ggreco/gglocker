@@ -22,22 +22,21 @@
         if ([src.disk_md5_pwd isEqualToString:[src.pwd.text md5]]) {
             dst.pwd = src.pwd.text;
             src.view.window.rootViewController = dst;
+        } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"WARNING" message:@"Wrong password!" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+            [src presentViewController:alert animated:YES completion:nil];
         }
-        else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WARNING" message:@"Wrong password!" delegate:src cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-            [alert show];
-        }
-    }
-    else {        
+    } else {
         if ([src.pwd.text isEqualToString:src.retype_field.text]) {
             NSString *dir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
             [[src.pwd.text md5] writeToFile:[dir stringByAppendingPathComponent:@"/identity"] atomically:NO encoding:NSUTF8StringEncoding error:nil];
             src.view.window.rootViewController = dst;
             dst.pwd = src.pwd.text;
-        }
-        else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WARNING" message:@"Both field should contain the same password!" delegate:src cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-            [alert show];
+        } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"WARNING" message:@"Both field should contain the same password!"  preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+            [src presentViewController:alert animated:YES completion:nil];
         }
     }
 }
