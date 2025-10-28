@@ -209,7 +209,7 @@
 				ORGANIZATIONNAME = "Gabriele Greco";
 				TargetAttributes = {
 					0B54335C15FF4DEE002CE137 = {
-						DevelopmentTeam = 26P4KFB7Z3;
+						DevelopmentTeam = V5G67D7VNU;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -219,6 +219,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 0B54335215FF4DEE002CE137;
@@ -379,7 +380,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = V5G67D7VNU;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "gglocker/gglocker-Prefix.pch";
 				INFOPLIST_FILE = "gglocker/gglocker-Info.plist";
@@ -400,7 +401,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = V5G67D7VNU;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "gglocker/gglocker-Prefix.pch";
 				INFOPLIST_FILE = "gglocker/gglocker-Info.plist";
